@@ -203,14 +203,18 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-configurationentry">Class: ConfigurationEntry</h1>
 <p><em>A configuration entry is a grouping of characteristics unique to a particular parameter or initial setting for the use of a tool, application, software, or other cyber object.</em></p>
-<p>URI: <a href="https://w3id.org/lmodel/uco-tool/ConfigurationEntry">tool:ConfigurationEntry</a></p>
+<p>URI: <a href="configuration:ConfigurationEntry">configuration:ConfigurationEntry</a></p>
 <div class="mermaid"> classDiagram
     class ConfigurationEntry
       UcoInherentCharacterizationThing &lt;|-- ConfigurationEntry
 
       ConfigurationEntry : itemDescription
 
+          ConfigurationEntry ..&gt; string : itemDescription
+
       ConfigurationEntry : itemName
+
+          ConfigurationEntry ..&gt; string : itemName
 
       ConfigurationEntry : itemObject
 
@@ -218,7 +222,11 @@
 
       ConfigurationEntry : itemType
 
+          ConfigurationEntry ..&gt; string : itemType
+
       ConfigurationEntry : itemValue
+
+          ConfigurationEntry ..&gt; string : itemValue
 
 
 </div>
@@ -251,25 +259,25 @@
 </tr>
 <tr>
 <td><a href="../itemDescription/">itemDescription</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>A description of a configuration setting entry item</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../itemName/">itemName</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>The name of a configuration setting entry item</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../itemType/">itemType</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>The type of a configuration setting entry item</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../itemValue/">itemValue</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>The value of a configuration setting entry instance</td>
 <td>direct</td>
 </tr>
@@ -297,7 +305,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-tool</li>
+<li>from schema: https://w3id.org/lmodel/uco-configuration</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -310,11 +318,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>tool:ConfigurationEntry</td>
+<td>configuration:ConfigurationEntry</td>
 </tr>
 <tr>
 <td>native</td>
-<td>tool:ConfigurationEntry</td>
+<td>configuration:ConfigurationEntry</td>
 </tr>
 <tr>
 <td>exact</td>
@@ -330,11 +338,10 @@
 description: A configuration entry is a grouping of characteristics unique to a particular
   parameter or initial setting for the use of a tool, application, software, or other
   cyber object.
-from_schema: https://w3id.org/linkmodel/uco-tool
+from_schema: https://w3id.org/lmodel/uco-configuration
 exact_mappings:
 - wikidata:Q265913
 - wikidata:Q105029446
-rank: 1000
 is_a: UcoInherentCharacterizationThing
 slots:
 - itemObject
@@ -347,12 +354,10 @@ slot_usage:
     name: itemDescription
     domain_of:
     - ConfigurationEntry
-    - ConfigurationEntry
     maximum_cardinality: 1
   itemName:
     name: itemName
     domain_of:
-    - ConfigurationEntry
     - ConfigurationEntry
     maximum_cardinality: 1
   itemObject:
@@ -360,18 +365,15 @@ slot_usage:
     multivalued: true
     domain_of:
     - ConfigurationEntry
-    - ConfigurationEntry
   itemType:
     name: itemType
     domain_of:
-    - ConfigurationEntry
     - ConfigurationEntry
     maximum_cardinality: 1
   itemValue:
     name: itemValue
     multivalued: true
     domain_of:
-    - ConfigurationEntry
     - ConfigurationEntry
 exactly_one_of:
 - slot_conditions:
@@ -399,23 +401,20 @@ exactly_one_of:
 description: A configuration entry is a grouping of characteristics unique to a particular
   parameter or initial setting for the use of a tool, application, software, or other
   cyber object.
-from_schema: https://w3id.org/linkmodel/uco-tool
+from_schema: https://w3id.org/lmodel/uco-configuration
 exact_mappings:
 - wikidata:Q265913
 - wikidata:Q105029446
-rank: 1000
 is_a: UcoInherentCharacterizationThing
 slot_usage:
   itemDescription:
     name: itemDescription
     domain_of:
     - ConfigurationEntry
-    - ConfigurationEntry
     maximum_cardinality: 1
   itemName:
     name: itemName
     domain_of:
-    - ConfigurationEntry
     - ConfigurationEntry
     maximum_cardinality: 1
   itemObject:
@@ -423,11 +422,9 @@ slot_usage:
     multivalued: true
     domain_of:
     - ConfigurationEntry
-    - ConfigurationEntry
   itemType:
     name: itemType
     domain_of:
-    - ConfigurationEntry
     - ConfigurationEntry
     maximum_cardinality: 1
   itemValue:
@@ -435,66 +432,55 @@ slot_usage:
     multivalued: true
     domain_of:
     - ConfigurationEntry
-    - ConfigurationEntry
 attributes:
   itemObject:
     name: itemObject
     description: The structured value of a configuration setting entry instance.
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-configuration
     multivalued: true
     alias: itemObject
     owner: ConfigurationEntry
     domain_of:
     - ConfigurationEntry
-    - ConfigurationEntry
     range: UcoObject
   itemDescription:
     name: itemDescription
     description: A description of a configuration setting entry item.
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-configuration
     alias: itemDescription
     owner: ConfigurationEntry
     domain_of:
-    - ConfigurationEntry
     - ConfigurationEntry
     range: string
     maximum_cardinality: 1
   itemName:
     name: itemName
     description: The name of a configuration setting entry item.
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-configuration
     alias: itemName
     owner: ConfigurationEntry
     domain_of:
-    - ConfigurationEntry
     - ConfigurationEntry
     range: string
     maximum_cardinality: 1
   itemType:
     name: itemType
     description: The type of a configuration setting entry item.
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-configuration
     alias: itemType
     owner: ConfigurationEntry
     domain_of:
-    - ConfigurationEntry
     - ConfigurationEntry
     range: string
     maximum_cardinality: 1
   itemValue:
     name: itemValue
     description: The value of a configuration setting entry instance.
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-configuration
     multivalued: true
     alias: itemValue
     owner: ConfigurationEntry
     domain_of:
-    - ConfigurationEntry
     - ConfigurationEntry
     range: string
 exactly_one_of:

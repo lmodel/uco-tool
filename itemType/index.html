@@ -319,7 +319,7 @@
 
 <h1 id="slot-itemtype">Slot: itemType</h1>
 <p><em>The type of a configuration setting entry item.</em></p>
-<p>URI: <a href="https://w3id.org/lmodel/uco-tool/itemType">tool:itemType</a></p>
+<p>URI: <a href="configuration:itemType">configuration:itemType</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -339,26 +339,25 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="xsd:string">xsd:string</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-tool</li>
+<li>from schema: https://w3id.org/lmodel/uco-configuration</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: itemType
 description: The type of a configuration setting entry item.
-from_schema: https://w3id.org/linkmodel/uco-tool
+from_schema: https://w3id.org/lmodel/uco-configuration
 exact_mappings:
 - lm_core:ComponentType
 close_mappings:
 - lm_core:Category
 broad_mappings:
 - NCIT:C95653
-rank: 1000
 alias: itemType
 domain_of:
 - ConfigurationEntry

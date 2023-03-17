@@ -210,7 +210,11 @@
 
       LibraryType : libraryName
 
+          LibraryType ..&gt; string : libraryName
+
       LibraryType : libraryVersion
+
+          LibraryType ..&gt; string : libraryVersion
 
 
 </div>
@@ -237,13 +241,13 @@
 <tbody>
 <tr>
 <td><a href="../libraryName/">libraryName</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"The name of the library</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../libraryVersion/">libraryVersion</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"The version of the library</td>
 <td>direct</td>
 </tr>

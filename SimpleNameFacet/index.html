@@ -198,18 +198,26 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-simplenamefacet">Class: SimpleNameFacet</h1>
 <p><em>A simple name facet is a grouping of characteristics unique to the personal name (e.g., Dr. John Smith Jr.) held by an identity.</em></p>
-<p>URI: <a href="https://w3id.org/lmodel/uco-tool/SimpleNameFacet">tool:SimpleNameFacet</a></p>
+<p>URI: <a href="identity:SimpleNameFacet">identity:SimpleNameFacet</a></p>
 <div class="mermaid"> classDiagram
     class SimpleNameFacet
       IdentityFacet &lt;|-- SimpleNameFacet
 
       SimpleNameFacet : familyName
 
+          SimpleNameFacet ..&gt; string : familyName
+
       SimpleNameFacet : givenName
+
+          SimpleNameFacet ..&gt; string : givenName
 
       SimpleNameFacet : honorificPrefix
 
+          SimpleNameFacet ..&gt; string : honorificPrefix
+
       SimpleNameFacet : honorificSuffix
+
+          SimpleNameFacet ..&gt; string : honorificSuffix
 
 
 </div>
@@ -242,25 +250,25 @@
 <tbody>
 <tr>
 <td><a href="../familyName/">familyName</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../givenName/">givenName</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../honorificPrefix/">honorificPrefix</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../honorificSuffix/">honorificSuffix</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -269,7 +277,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-tool</li>
+<li>from schema: https://w3id.org/lmodel/uco-identity</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -282,11 +290,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>tool:SimpleNameFacet</td>
+<td>identity:SimpleNameFacet</td>
 </tr>
 <tr>
 <td>native</td>
-<td>tool:SimpleNameFacet</td>
+<td>identity:SimpleNameFacet</td>
 </tr>
 </tbody>
 </table>
@@ -297,8 +305,7 @@
 <pre><code class="language-yaml">name: SimpleNameFacet
 description: A simple name facet is a grouping of characteristics unique to the personal
   name (e.g., Dr. John Smith Jr.) held by an identity.
-from_schema: https://w3id.org/linkmodel/uco-tool
-rank: 1000
+from_schema: https://w3id.org/lmodel/uco-identity
 is_a: IdentityFacet
 slots:
 - familyName
@@ -311,24 +318,20 @@ slot_usage:
     multivalued: true
     domain_of:
     - SimpleNameFacet
-    - SimpleNameFacet
   givenName:
     name: givenName
     multivalued: true
     domain_of:
-    - SimpleNameFacet
     - SimpleNameFacet
   honorificPrefix:
     name: honorificPrefix
     multivalued: true
     domain_of:
     - SimpleNameFacet
-    - SimpleNameFacet
   honorificSuffix:
     name: honorificSuffix
     multivalued: true
     domain_of:
-    - SimpleNameFacet
     - SimpleNameFacet
 
 </code></pre>
@@ -338,8 +341,7 @@ slot_usage:
 <pre><code class="language-yaml">name: SimpleNameFacet
 description: A simple name facet is a grouping of characteristics unique to the personal
   name (e.g., Dr. John Smith Jr.) held by an identity.
-from_schema: https://w3id.org/linkmodel/uco-tool
-rank: 1000
+from_schema: https://w3id.org/lmodel/uco-identity
 is_a: IdentityFacet
 slot_usage:
   familyName:
@@ -347,72 +349,60 @@ slot_usage:
     multivalued: true
     domain_of:
     - SimpleNameFacet
-    - SimpleNameFacet
   givenName:
     name: givenName
     multivalued: true
     domain_of:
-    - SimpleNameFacet
     - SimpleNameFacet
   honorificPrefix:
     name: honorificPrefix
     multivalued: true
     domain_of:
     - SimpleNameFacet
-    - SimpleNameFacet
   honorificSuffix:
     name: honorificSuffix
     multivalued: true
     domain_of:
-    - SimpleNameFacet
     - SimpleNameFacet
 attributes:
   familyName:
     name: familyName
     description: ''
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-identity
     multivalued: true
     alias: familyName
     owner: SimpleNameFacet
     domain_of:
     - SimpleNameFacet
-    - SimpleNameFacet
     range: string
   givenName:
     name: givenName
     description: ''
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-identity
     multivalued: true
     alias: givenName
     owner: SimpleNameFacet
     domain_of:
     - SimpleNameFacet
-    - SimpleNameFacet
     range: string
   honorificPrefix:
     name: honorificPrefix
     description: ''
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-identity
     multivalued: true
     alias: honorificPrefix
     owner: SimpleNameFacet
     domain_of:
     - SimpleNameFacet
-    - SimpleNameFacet
     range: string
   honorificSuffix:
     name: honorificSuffix
     description: ''
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-identity
     multivalued: true
     alias: honorificSuffix
     owner: SimpleNameFacet
     domain_of:
-    - SimpleNameFacet
     - SimpleNameFacet
     range: string
 

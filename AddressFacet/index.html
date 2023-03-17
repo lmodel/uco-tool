@@ -198,7 +198,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-addressfacet">Class: AddressFacet</h1>
 <p><em>An Address Facet is a grouping of characteristics unique to an administrative identifier for a geolocation associated with a specific identity.</em></p>
-<p>URI: <a href="https://w3id.org/lmodel/uco-tool/AddressFacet">tool:AddressFacet</a></p>
+<p>URI: <a href="identity:AddressFacet">identity:AddressFacet</a></p>
 <div class="mermaid"> classDiagram
     class AddressFacet
       IdentityFacet &lt;|-- AddressFacet
@@ -247,7 +247,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-tool</li>
+<li>from schema: https://w3id.org/lmodel/uco-identity</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -260,11 +260,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>tool:AddressFacet</td>
+<td>identity:AddressFacet</td>
 </tr>
 <tr>
 <td>native</td>
-<td>tool:AddressFacet</td>
+<td>identity:AddressFacet</td>
 </tr>
 </tbody>
 </table>
@@ -275,8 +275,7 @@
 <pre><code class="language-yaml">name: AddressFacet
 description: An Address Facet is a grouping of characteristics unique to an administrative
   identifier for a geolocation associated with a specific identity.
-from_schema: https://w3id.org/linkmodel/uco-tool
-rank: 1000
+from_schema: https://w3id.org/lmodel/uco-identity
 is_a: IdentityFacet
 slots:
 - address
@@ -284,7 +283,6 @@ slot_usage:
   address:
     name: address
     domain_of:
-    - AddressFacet
     - AddressFacet
     maximum_cardinality: 1
 
@@ -295,26 +293,22 @@ slot_usage:
 <pre><code class="language-yaml">name: AddressFacet
 description: An Address Facet is a grouping of characteristics unique to an administrative
   identifier for a geolocation associated with a specific identity.
-from_schema: https://w3id.org/linkmodel/uco-tool
-rank: 1000
+from_schema: https://w3id.org/lmodel/uco-identity
 is_a: IdentityFacet
 slot_usage:
   address:
     name: address
     domain_of:
     - AddressFacet
-    - AddressFacet
     maximum_cardinality: 1
 attributes:
   address:
     name: address
     description: ''
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-identity
     alias: address
     owner: AddressFacet
     domain_of:
-    - AddressFacet
     - AddressFacet
     range: Location
     maximum_cardinality: 1

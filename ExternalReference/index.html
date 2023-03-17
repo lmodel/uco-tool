@@ -203,16 +203,22 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-externalreference">Class: ExternalReference</h1>
 <p><em>Characteristics of a reference to a resource outside of the UCO.</em></p>
-<p>URI: <a href="https://w3id.org/lmodel/uco-tool/ExternalReference">tool:ExternalReference</a></p>
+<p>URI: <a href="core:ExternalReference">core:ExternalReference</a></p>
 <div class="mermaid"> classDiagram
     class ExternalReference
       UcoInherentCharacterizationThing &lt;|-- ExternalReference
 
       ExternalReference : definingContext
 
+          ExternalReference ..&gt; string : definingContext
+
       ExternalReference : externalIdentifier
 
+          ExternalReference ..&gt; string : externalIdentifier
+
       ExternalReference : referenceURL
+
+          ExternalReference ..&gt; iri type : referenceURL
 
 
 </div>
@@ -245,13 +251,13 @@
 </tr>
 <tr>
 <td><a href="../definingContext/">definingContext</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>A description of the context relevant to the definition of a particular exter...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../externalIdentifier/">externalIdentifier</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>An identifier for some information defined external to the UCO context</td>
 <td>direct</td>
 </tr>
@@ -423,7 +429,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-tool</li>
+<li>from schema: https://w3id.org/lmodel/uco-core</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -436,11 +442,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>tool:ExternalReference</td>
+<td>core:ExternalReference</td>
 </tr>
 <tr>
 <td>native</td>
-<td>tool:ExternalReference</td>
+<td>core:ExternalReference</td>
 </tr>
 </tbody>
 </table>
@@ -450,8 +456,7 @@
 <details>
 <pre><code class="language-yaml">name: ExternalReference
 description: Characteristics of a reference to a resource outside of the UCO.
-from_schema: https://w3id.org/linkmodel/uco-tool
-rank: 1000
+from_schema: https://w3id.org/lmodel/uco-core
 is_a: UcoInherentCharacterizationThing
 slots:
 - referenceURL
@@ -462,18 +467,15 @@ slot_usage:
     name: referenceURL
     domain_of:
     - ExternalReference
-    - ExternalReference
     maximum_cardinality: 1
   definingContext:
     name: definingContext
     domain_of:
     - ExternalReference
-    - ExternalReference
     maximum_cardinality: 1
   externalIdentifier:
     name: externalIdentifier
     domain_of:
-    - ExternalReference
     - ExternalReference
     maximum_cardinality: 1
 
@@ -483,38 +485,32 @@ slot_usage:
 <details>
 <pre><code class="language-yaml">name: ExternalReference
 description: Characteristics of a reference to a resource outside of the UCO.
-from_schema: https://w3id.org/linkmodel/uco-tool
-rank: 1000
+from_schema: https://w3id.org/lmodel/uco-core
 is_a: UcoInherentCharacterizationThing
 slot_usage:
   referenceURL:
     name: referenceURL
     domain_of:
     - ExternalReference
-    - ExternalReference
     maximum_cardinality: 1
   definingContext:
     name: definingContext
     domain_of:
-    - ExternalReference
     - ExternalReference
     maximum_cardinality: 1
   externalIdentifier:
     name: externalIdentifier
     domain_of:
     - ExternalReference
-    - ExternalReference
     maximum_cardinality: 1
 attributes:
   referenceURL:
     name: referenceURL
     description: A URL for some information defined external to the UCO context.
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-core
     alias: referenceURL
     owner: ExternalReference
     domain_of:
-    - ExternalReference
     - ExternalReference
     range: iri type
     maximum_cardinality: 1
@@ -522,24 +518,20 @@ attributes:
     name: definingContext
     description: A description of the context relevant to the definition of a particular
       external reference identifier.
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-core
     alias: definingContext
     owner: ExternalReference
     domain_of:
-    - ExternalReference
     - ExternalReference
     range: string
     maximum_cardinality: 1
   externalIdentifier:
     name: externalIdentifier
     description: An identifier for some information defined external to the UCO context.
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-core
     alias: externalIdentifier
     owner: ExternalReference
     domain_of:
-    - ExternalReference
     - ExternalReference
     range: string
     maximum_cardinality: 1

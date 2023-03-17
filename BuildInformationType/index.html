@@ -214,13 +214,23 @@
 
       BuildInformationType : buildID
 
+          BuildInformationType ..&gt; string : buildID
+
       BuildInformationType : buildLabel
+
+          BuildInformationType ..&gt; string : buildLabel
 
       BuildInformationType : buildOutputLog
 
+          BuildInformationType ..&gt; string : buildOutputLog
+
       BuildInformationType : buildProject
 
+          BuildInformationType ..&gt; string : buildProject
+
       BuildInformationType : buildScript
+
+          BuildInformationType ..&gt; string : buildScript
 
       BuildInformationType : buildUtility
 
@@ -228,7 +238,11 @@
 
       BuildInformationType : buildVersion
 
+          BuildInformationType ..&gt; string : buildVersion
+
       BuildInformationType : compilationDate
+
+          BuildInformationType ..&gt; datetime : compilationDate
 
       BuildInformationType : compilers
 
@@ -287,43 +301,43 @@
 </tr>
 <tr>
 <td><a href="../compilationDate/">compilationDate</a></td>
-<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>0..1 <br/> <a href="xsd:dateTime">xsd:dateTime</a></td>
 <td>"The compilation date for the build of a software</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../buildID/">buildID</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"An externally defined unique identifier for a particular build of a software</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../buildLabel/">buildLabel</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"Relevant label for a particular build of a particular software</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../buildOutputLog/">buildOutputLog</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"The output log of the build process for a software</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../buildProject/">buildProject</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"The project name of a build of a software</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../buildScript/">buildScript</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"The actual build script for a particular build of a particular software</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../buildVersion/">buildVersion</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"The appropriate version descriptor of a particular build of a particular sof...</td>
 <td>direct</td>
 </tr>
@@ -401,12 +415,10 @@ slot_usage:
     multivalued: true
     domain_of:
     - BuildInformationType
-    - BuildInformationType
   libraries:
     name: libraries
     multivalued: true
     domain_of:
-    - BuildInformationType
     - BuildInformationType
 
 </code></pre>
@@ -426,12 +438,10 @@ slot_usage:
     multivalued: true
     domain_of:
     - BuildInformationType
-    - BuildInformationType
   libraries:
     name: libraries
     multivalued: true
     domain_of:
-    - BuildInformationType
     - BuildInformationType
 attributes:
   buildConfiguration:
@@ -466,7 +476,6 @@ attributes:
     owner: BuildInformationType
     domain_of:
     - BuildInformationType
-    - BuildInformationType
     range: CompilerType
   libraries:
     name: libraries
@@ -477,7 +486,6 @@ attributes:
     alias: libraries
     owner: BuildInformationType
     domain_of:
-    - BuildInformationType
     - BuildInformationType
     range: LibraryType
   compilationDate:

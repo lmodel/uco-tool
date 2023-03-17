@@ -208,14 +208,18 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-dependency">Class: Dependency</h1>
 <p><em>A dependency is a grouping of characteristics unique to something that a tool or other software relies on to function as intended.</em></p>
-<p>URI: <a href="https://w3id.org/lmodel/uco-tool/Dependency">tool:Dependency</a></p>
+<p>URI: <a href="configuration:Dependency">configuration:Dependency</a></p>
 <div class="mermaid"> classDiagram
     class Dependency
       UcoInherentCharacterizationThing &lt;|-- Dependency
 
       Dependency : dependencyDescription
 
+          Dependency ..&gt; string : dependencyDescription
+
       Dependency : dependencyType
+
+          Dependency ..&gt; string : dependencyType
 
 
 </div>
@@ -242,13 +246,13 @@
 <tbody>
 <tr>
 <td><a href="../dependencyDescription/">dependencyDescription</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>A description of a tool or other software dependency</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../dependencyType/">dependencyType</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>The type of a tool or other software dependency</td>
 <td>direct</td>
 </tr>
@@ -280,7 +284,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/linkmodel/uco-tool</li>
+<li>from schema: https://w3id.org/lmodel/uco-configuration</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -293,11 +297,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>tool:Dependency</td>
+<td>configuration:Dependency</td>
 </tr>
 <tr>
 <td>native</td>
-<td>tool:Dependency</td>
+<td>configuration:Dependency</td>
 </tr>
 <tr>
 <td>exact</td>
@@ -319,14 +323,13 @@ description: A dependency is a grouping of characteristics unique to something t
 comments:
 - A dependency is a grouping of characteristics unique to something that a tool or
   other software relies on to function as intended.
-from_schema: https://w3id.org/linkmodel/uco-tool
+from_schema: https://w3id.org/lmodel/uco-configuration
 exact_mappings:
 - sumo:Dependent-TaskRelation
 - wikidata:Q56859575
 - wikidata:Q334630
 broad_mappings:
 - wikidata:Q1191527
-rank: 1000
 is_a: UcoInherentCharacterizationThing
 slots:
 - dependencyDescription
@@ -336,12 +339,10 @@ slot_usage:
     name: dependencyDescription
     domain_of:
     - Dependency
-    - Dependency
     maximum_cardinality: 1
   dependencyType:
     name: dependencyType
     domain_of:
-    - Dependency
     - Dependency
     maximum_cardinality: 1
 
@@ -355,50 +356,43 @@ description: A dependency is a grouping of characteristics unique to something t
 comments:
 - A dependency is a grouping of characteristics unique to something that a tool or
   other software relies on to function as intended.
-from_schema: https://w3id.org/linkmodel/uco-tool
+from_schema: https://w3id.org/lmodel/uco-configuration
 exact_mappings:
 - sumo:Dependent-TaskRelation
 - wikidata:Q56859575
 - wikidata:Q334630
 broad_mappings:
 - wikidata:Q1191527
-rank: 1000
 is_a: UcoInherentCharacterizationThing
 slot_usage:
   dependencyDescription:
     name: dependencyDescription
     domain_of:
     - Dependency
-    - Dependency
     maximum_cardinality: 1
   dependencyType:
     name: dependencyType
     domain_of:
-    - Dependency
     - Dependency
     maximum_cardinality: 1
 attributes:
   dependencyDescription:
     name: dependencyDescription
     description: A description of a tool or other software dependency.
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-configuration
     alias: dependencyDescription
     owner: Dependency
     domain_of:
-    - Dependency
     - Dependency
     range: string
     maximum_cardinality: 1
   dependencyType:
     name: dependencyType
     description: The type of a tool or other software dependency.
-    from_schema: https://w3id.org/linkmodel/uco-tool
-    rank: 1000
+    from_schema: https://w3id.org/lmodel/uco-configuration
     alias: dependencyType
     owner: Dependency
     domain_of:
-    - Dependency
     - Dependency
     range: string
     maximum_cardinality: 1

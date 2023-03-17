@@ -218,6 +218,10 @@
 
           Tool ..&gt; iri type : _references
 
+      Tool : _version
+
+          Tool ..&gt; string : _version
+
       Tool : createdBy
 
           Tool ..&gt; string : createdBy
@@ -265,10 +269,6 @@
       Tool : toolType
 
           Tool ..&gt; string : toolType
-
-      Tool : version
-
-          Tool ..&gt; string : version
 
 
 </div>
@@ -324,7 +324,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../version/">version</a></td>
+<td><a href="../_version/">_version</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"An appropriate version descriptor of a particular tool</td>
 <td>direct</td>
@@ -436,7 +436,7 @@ slots:
 - _references
 - servicePack
 - toolType
-- version
+- _version
 slot_usage:
   name: _references
   multivalued: true
@@ -504,14 +504,14 @@ attributes:
     domain_of:
     - Tool
     range: string
-  version:
-    name: version
+  _version:
+    name: _version
     description: '"An appropriate version descriptor of a particular tool."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     exact_mappings:
     - wikidata:Q20826013
     rank: 1000
-    alias: version
+    alias: _version
     owner: Tool
     domain_of:
     - Tool

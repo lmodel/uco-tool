@@ -211,6 +211,10 @@
 
           AnalyticTool ..&gt; iri type : _references
 
+      AnalyticTool : _version
+
+          AnalyticTool ..&gt; string : _version
+
       AnalyticTool : createdBy
 
           AnalyticTool ..&gt; string : createdBy
@@ -258,10 +262,6 @@
       AnalyticTool : toolType
 
           AnalyticTool ..&gt; string : toolType
-
-      AnalyticTool : version
-
-          AnalyticTool ..&gt; string : version
 
 
 </div>
@@ -314,7 +314,7 @@
 <td><a href="../Tool/">Tool</a></td>
 </tr>
 <tr>
-<td><a href="../version/">version</a></td>
+<td><a href="../_version/">_version</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"An appropriate version descriptor of a particular tool</td>
 <td><a href="../Tool/">Tool</a></td>
@@ -470,14 +470,14 @@ attributes:
     domain_of:
     - Tool
     range: string
-  version:
-    name: version
+  _version:
+    name: _version
     description: '"An appropriate version descriptor of a particular tool."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     exact_mappings:
     - wikidata:Q20826013
     rank: 1000
-    alias: version
+    alias: _version
     owner: AnalyticTool
     domain_of:
     - Tool

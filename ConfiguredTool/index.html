@@ -211,6 +211,10 @@
 
           ConfiguredTool ..&gt; iri type : _references
 
+      ConfiguredTool : _version
+
+          ConfiguredTool ..&gt; string : _version
+
       ConfiguredTool : createdBy
 
           ConfiguredTool ..&gt; string : createdBy
@@ -266,10 +270,6 @@
       ConfiguredTool : usesConfiguration
 
           ConfiguredTool ..&gt; Configuration : usesConfiguration
-
-      ConfiguredTool : version
-
-          ConfiguredTool ..&gt; string : version
 
 
 </div>
@@ -334,7 +334,7 @@
 <td><a href="../Tool/">Tool</a></td>
 </tr>
 <tr>
-<td><a href="../version/">version</a></td>
+<td><a href="../_version/">_version</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"An appropriate version descriptor of a particular tool</td>
 <td><a href="../Tool/">Tool</a></td>
@@ -519,14 +519,14 @@ attributes:
     domain_of:
     - Tool
     range: string
-  version:
-    name: version
+  _version:
+    name: _version
     description: '"An appropriate version descriptor of a particular tool."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     exact_mappings:
     - wikidata:Q20826013
     rank: 1000
-    alias: version
+    alias: _version
     owner: ConfiguredTool
     domain_of:
     - Tool

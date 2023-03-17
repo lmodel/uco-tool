@@ -212,13 +212,13 @@
 
           CompilerType ..&gt; string : _cpeid
 
+      CompilerType : _swid
+
+          CompilerType ..&gt; string : _swid
+
       CompilerType : compilerInformalDescription
 
           CompilerType ..&gt; string : compilerInformalDescription
-
-      CompilerType : swid
-
-          CompilerType ..&gt; string : swid
 
 
 </div>
@@ -256,7 +256,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../swid/">swid</a></td>
+<td><a href="../_swid/">_swid</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"Specifies the SWID tag for the software</td>
 <td>direct</td>
@@ -323,7 +323,7 @@ is_a: UcoInherentCharacterizationThing
 slots:
 - compilerInformalDescription
 - _cpeid
-- swid
+- _swid
 
 </code></pre>
 </details>
@@ -361,12 +361,12 @@ attributes:
     - BuildUtilityType
     - CompilerType
     range: string
-  swid:
-    name: swid
+  _swid:
+    name: _swid
     description: '"Specifies the SWID tag for the software."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     rank: 1000
-    alias: swid
+    alias: _swid
     owner: CompilerType
     domain_of:
     - BuildUtilityType

@@ -212,13 +212,13 @@
 
           BuildUtilityType ..&gt; string : _cpeid
 
+      BuildUtilityType : _swid
+
+          BuildUtilityType ..&gt; string : _swid
+
       BuildUtilityType : buildUtilityName
 
           BuildUtilityType ..&gt; string : buildUtilityName
-
-      BuildUtilityType : swid
-
-          BuildUtilityType ..&gt; string : swid
 
 
 </div>
@@ -256,7 +256,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../swid/">swid</a></td>
+<td><a href="../_swid/">_swid</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"Specifies the SWID tag for the software</td>
 <td>direct</td>
@@ -319,7 +319,7 @@ is_a: UcoInherentCharacterizationThing
 slots:
 - buildUtilityName
 - _cpeid
-- swid
+- _swid
 
 </code></pre>
 </details>
@@ -354,12 +354,12 @@ attributes:
     - BuildUtilityType
     - CompilerType
     range: string
-  swid:
-    name: swid
+  _swid:
+    name: _swid
     description: '"Specifies the SWID tag for the software."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     rank: 1000
-    alias: swid
+    alias: _swid
     owner: BuildUtilityType
     domain_of:
     - BuildUtilityType

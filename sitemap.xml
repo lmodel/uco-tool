@@ -346,6 +346,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://lmodel.github.io/uco-tool/_swid/</loc>
+         <lastmod>2023-03-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://lmodel.github.io/uco-tool/address/</loc>
          <lastmod>2023-03-17</lastmod>
          <changefreq>daily</changefreq>
@@ -682,11 +687,6 @@
     </url>
     <url>
          <loc>https://lmodel.github.io/uco-tool/street/</loc>
-         <lastmod>2023-03-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://lmodel.github.io/uco-tool/swid/</loc>
          <lastmod>2023-03-17</lastmod>
          <changefreq>daily</changefreq>
     </url>

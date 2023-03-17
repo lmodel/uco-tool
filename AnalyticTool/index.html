@@ -207,6 +207,10 @@
 
           AnalyticTool ..&gt; Identity : _creator
 
+      AnalyticTool : _references
+
+          AnalyticTool ..&gt; iri type : _references
+
       AnalyticTool : createdBy
 
           AnalyticTool ..&gt; string : createdBy
@@ -238,10 +242,6 @@
       AnalyticTool : objectMarking
 
           AnalyticTool ..&gt; MarkingDefinitionAbstraction : objectMarking
-
-      AnalyticTool : references
-
-          AnalyticTool ..&gt; iri type : references
 
       AnalyticTool : servicePack
 
@@ -296,7 +296,7 @@
 <td><a href="../Tool/">Tool</a></td>
 </tr>
 <tr>
-<td><a href="../references/">references</a></td>
+<td><a href="../_references/">_references</a></td>
 <td>0..* <br/> <a href="../IriType/">IriType</a></td>
 <td>"References to information describing a particular tool</td>
 <td><a href="../Tool/">Tool</a></td>
@@ -437,13 +437,13 @@ attributes:
     domain_of:
     - Tool
     range: Identity
-  references:
-    name: references
+  _references:
+    name: _references
     description: '"References to information describing a particular tool."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     rank: 1000
     multivalued: true
-    alias: references
+    alias: _references
     owner: AnalyticTool
     domain_of:
     - Tool

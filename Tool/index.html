@@ -214,6 +214,10 @@
 
           Tool ..&gt; Identity : _creator
 
+      Tool : _references
+
+          Tool ..&gt; iri type : _references
+
       Tool : createdBy
 
           Tool ..&gt; string : createdBy
@@ -245,10 +249,6 @@
       Tool : objectMarking
 
           Tool ..&gt; MarkingDefinitionAbstraction : objectMarking
-
-      Tool : references
-
-          Tool ..&gt; iri type : references
 
       Tool : servicePack
 
@@ -306,7 +306,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../references/">references</a></td>
+<td><a href="../_references/">_references</a></td>
 <td>0..1 <br/> <a href="../IriType/">IriType</a></td>
 <td>"References to information describing a particular tool</td>
 <td>direct</td>
@@ -433,16 +433,15 @@ rank: 1000
 is_a: UcoObject
 slots:
 - _creator
-- references
+- _references
 - servicePack
 - toolType
 - version
 slot_usage:
-  references:
-    name: references
-    multivalued: true
-    domain_of:
-    - Tool
+  name: _references
+  multivalued: true
+  domain_of:
+  - Tool
 
 </code></pre>
 </details>
@@ -457,11 +456,10 @@ narrow_mappings:
 rank: 1000
 is_a: UcoObject
 slot_usage:
-  references:
-    name: references
-    multivalued: true
-    domain_of:
-    - Tool
+  name: _references
+  multivalued: true
+  domain_of:
+  - Tool
 attributes:
   _creator:
     name: _creator
@@ -473,13 +471,13 @@ attributes:
     domain_of:
     - Tool
     range: Identity
-  references:
-    name: references
+  _references:
+    name: _references
     description: '"References to information describing a particular tool."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     rank: 1000
     multivalued: true
-    alias: references
+    alias: _references
     owner: Tool
     domain_of:
     - Tool

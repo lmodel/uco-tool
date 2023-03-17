@@ -207,6 +207,10 @@
 
           DefensiveTool ..&gt; Identity : _creator
 
+      DefensiveTool : _references
+
+          DefensiveTool ..&gt; iri type : _references
+
       DefensiveTool : createdBy
 
           DefensiveTool ..&gt; string : createdBy
@@ -238,10 +242,6 @@
       DefensiveTool : objectMarking
 
           DefensiveTool ..&gt; MarkingDefinitionAbstraction : objectMarking
-
-      DefensiveTool : references
-
-          DefensiveTool ..&gt; iri type : references
 
       DefensiveTool : servicePack
 
@@ -296,7 +296,7 @@
 <td><a href="../Tool/">Tool</a></td>
 </tr>
 <tr>
-<td><a href="../references/">references</a></td>
+<td><a href="../_references/">_references</a></td>
 <td>0..* <br/> <a href="../IriType/">IriType</a></td>
 <td>"References to information describing a particular tool</td>
 <td><a href="../Tool/">Tool</a></td>
@@ -437,13 +437,13 @@ attributes:
     domain_of:
     - Tool
     range: Identity
-  references:
-    name: references
+  _references:
+    name: _references
     description: '"References to information describing a particular tool."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     rank: 1000
     multivalued: true
-    alias: references
+    alias: _references
     owner: DefensiveTool
     domain_of:
     - Tool

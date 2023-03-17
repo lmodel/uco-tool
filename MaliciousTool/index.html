@@ -207,6 +207,10 @@
 
           MaliciousTool ..&gt; Identity : _creator
 
+      MaliciousTool : _references
+
+          MaliciousTool ..&gt; iri type : _references
+
       MaliciousTool : createdBy
 
           MaliciousTool ..&gt; string : createdBy
@@ -238,10 +242,6 @@
       MaliciousTool : objectMarking
 
           MaliciousTool ..&gt; MarkingDefinitionAbstraction : objectMarking
-
-      MaliciousTool : references
-
-          MaliciousTool ..&gt; iri type : references
 
       MaliciousTool : servicePack
 
@@ -296,7 +296,7 @@
 <td><a href="../Tool/">Tool</a></td>
 </tr>
 <tr>
-<td><a href="../references/">references</a></td>
+<td><a href="../_references/">_references</a></td>
 <td>0..* <br/> <a href="../IriType/">IriType</a></td>
 <td>"References to information describing a particular tool</td>
 <td><a href="../Tool/">Tool</a></td>
@@ -437,13 +437,13 @@ attributes:
     domain_of:
     - Tool
     range: Identity
-  references:
-    name: references
+  _references:
+    name: _references
     description: '"References to information describing a particular tool."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     rank: 1000
     multivalued: true
-    alias: references
+    alias: _references
     owner: MaliciousTool
     domain_of:
     - Tool

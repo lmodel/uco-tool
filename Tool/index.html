@@ -210,13 +210,13 @@
       Tool &lt;|-- MaliciousTool
 
 
+      Tool : _creator
+
+          Tool ..&gt; Identity : _creator
+
       Tool : createdBy
 
           Tool ..&gt; string : createdBy
-
-      Tool : creator
-
-          Tool ..&gt; Identity : creator
 
       Tool : description
 
@@ -300,7 +300,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../creator/">creator</a></td>
+<td><a href="../_creator/">_creator</a></td>
 <td>0..1 <br/> <a href="../Identity/">Identity</a></td>
 <td>"The creator organization for a particular tool</td>
 <td>direct</td>
@@ -432,7 +432,7 @@ narrow_mappings:
 rank: 1000
 is_a: UcoObject
 slots:
-- creator
+- _creator
 - references
 - servicePack
 - toolType
@@ -463,12 +463,12 @@ slot_usage:
     domain_of:
     - Tool
 attributes:
-  creator:
-    name: creator
+  _creator:
+    name: _creator
     description: '"The creator organization for a particular tool."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     rank: 1000
-    alias: creator
+    alias: _creator
     owner: Tool
     domain_of:
     - Tool

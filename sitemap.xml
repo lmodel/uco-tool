@@ -336,6 +336,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://lmodel.github.io/uco-tool/_creator/</loc>
+         <lastmod>2023-03-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://lmodel.github.io/uco-tool/address/</loc>
          <lastmod>2023-03-17</lastmod>
          <changefreq>daily</changefreq>
@@ -452,11 +457,6 @@
     </url>
     <url>
          <loc>https://lmodel.github.io/uco-tool/createdBy/</loc>
-         <lastmod>2023-03-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://lmodel.github.io/uco-tool/creator/</loc>
          <lastmod>2023-03-17</lastmod>
          <changefreq>daily</changefreq>
     </url>

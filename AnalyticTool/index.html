@@ -203,13 +203,13 @@
     class AnalyticTool
       Tool &lt;|-- AnalyticTool
 
+      AnalyticTool : _creator
+
+          AnalyticTool ..&gt; Identity : _creator
+
       AnalyticTool : createdBy
 
           AnalyticTool ..&gt; string : createdBy
-
-      AnalyticTool : creator
-
-          AnalyticTool ..&gt; Identity : creator
 
       AnalyticTool : description
 
@@ -290,7 +290,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../creator/">creator</a></td>
+<td><a href="../_creator/">_creator</a></td>
 <td>0..1 <br/> <a href="../Identity/">Identity</a></td>
 <td>"The creator organization for a particular tool</td>
 <td><a href="../Tool/">Tool</a></td>
@@ -427,12 +427,12 @@ from_schema: https://w3id.org/linkmodel/uco-tool
 rank: 1000
 is_a: Tool
 attributes:
-  creator:
-    name: creator
+  _creator:
+    name: _creator
     description: '"The creator organization for a particular tool."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     rank: 1000
-    alias: creator
+    alias: _creator
     owner: AnalyticTool
     domain_of:
     - Tool

@@ -203,13 +203,13 @@
     class ConfiguredTool
       Tool &lt;|-- ConfiguredTool
 
+      ConfiguredTool : _creator
+
+          ConfiguredTool ..&gt; Identity : _creator
+
       ConfiguredTool : createdBy
 
           ConfiguredTool ..&gt; string : createdBy
-
-      ConfiguredTool : creator
-
-          ConfiguredTool ..&gt; Identity : creator
 
       ConfiguredTool : description
 
@@ -310,7 +310,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../creator/">creator</a></td>
+<td><a href="../_creator/">_creator</a></td>
 <td>0..1 <br/> <a href="../Identity/">Identity</a></td>
 <td>"The creator organization for a particular tool</td>
 <td><a href="../Tool/">Tool</a></td>
@@ -476,12 +476,12 @@ attributes:
     - ConfiguredTool
     irreflexive: true
     range: UcoObject
-  creator:
-    name: creator
+  _creator:
+    name: _creator
     description: '"The creator organization for a particular tool."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     rank: 1000
-    alias: creator
+    alias: _creator
     owner: ConfiguredTool
     domain_of:
     - Tool

@@ -203,13 +203,13 @@
     class DefensiveTool
       Tool &lt;|-- DefensiveTool
 
+      DefensiveTool : _creator
+
+          DefensiveTool ..&gt; Identity : _creator
+
       DefensiveTool : createdBy
 
           DefensiveTool ..&gt; string : createdBy
-
-      DefensiveTool : creator
-
-          DefensiveTool ..&gt; Identity : creator
 
       DefensiveTool : description
 
@@ -290,7 +290,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../creator/">creator</a></td>
+<td><a href="../_creator/">_creator</a></td>
 <td>0..1 <br/> <a href="../Identity/">Identity</a></td>
 <td>"The creator organization for a particular tool</td>
 <td><a href="../Tool/">Tool</a></td>
@@ -427,12 +427,12 @@ from_schema: https://w3id.org/linkmodel/uco-tool
 rank: 1000
 is_a: Tool
 attributes:
-  creator:
-    name: creator
+  _creator:
+    name: _creator
     description: '"The creator organization for a particular tool."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     rank: 1000
-    alias: creator
+    alias: _creator
     owner: DefensiveTool
     domain_of:
     - Tool

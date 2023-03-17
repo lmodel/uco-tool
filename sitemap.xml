@@ -331,6 +331,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://lmodel.github.io/uco-tool/_cpeid/</loc>
+         <lastmod>2023-03-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://lmodel.github.io/uco-tool/address/</loc>
          <lastmod>2023-03-17</lastmod>
          <changefreq>daily</changefreq>
@@ -442,11 +447,6 @@
     </url>
     <url>
          <loc>https://lmodel.github.io/uco-tool/country/</loc>
-         <lastmod>2023-03-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://lmodel.github.io/uco-tool/cpeid/</loc>
          <lastmod>2023-03-17</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -208,13 +208,13 @@
     class CompilerType
       UcoInherentCharacterizationThing &lt;|-- CompilerType
 
+      CompilerType : _cpeid
+
+          CompilerType ..&gt; string : _cpeid
+
       CompilerType : compilerInformalDescription
 
           CompilerType ..&gt; string : compilerInformalDescription
-
-      CompilerType : cpeid
-
-          CompilerType ..&gt; string : cpeid
 
       CompilerType : swid
 
@@ -250,7 +250,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cpeid/">cpeid</a></td>
+<td><a href="../_cpeid/">_cpeid</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"Specifies the Common Platform Enumeration identifier for the software</td>
 <td>direct</td>
@@ -322,7 +322,7 @@ rank: 1000
 is_a: UcoInherentCharacterizationThing
 slots:
 - compilerInformalDescription
-- cpeid
+- _cpeid
 - swid
 
 </code></pre>
@@ -350,12 +350,12 @@ attributes:
     domain_of:
     - CompilerType
     range: string
-  cpeid:
-    name: cpeid
+  _cpeid:
+    name: _cpeid
     description: '"Specifies the Common Platform Enumeration identifier for the software."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     rank: 1000
-    alias: cpeid
+    alias: _cpeid
     owner: CompilerType
     domain_of:
     - BuildUtilityType

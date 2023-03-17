@@ -208,13 +208,13 @@
     class BuildUtilityType
       UcoInherentCharacterizationThing &lt;|-- BuildUtilityType
 
+      BuildUtilityType : _cpeid
+
+          BuildUtilityType ..&gt; string : _cpeid
+
       BuildUtilityType : buildUtilityName
 
           BuildUtilityType ..&gt; string : buildUtilityName
-
-      BuildUtilityType : cpeid
-
-          BuildUtilityType ..&gt; string : cpeid
 
       BuildUtilityType : swid
 
@@ -250,7 +250,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cpeid/">cpeid</a></td>
+<td><a href="../_cpeid/">_cpeid</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>"Specifies the Common Platform Enumeration identifier for the software</td>
 <td>direct</td>
@@ -318,7 +318,7 @@ rank: 1000
 is_a: UcoInherentCharacterizationThing
 slots:
 - buildUtilityName
-- cpeid
+- _cpeid
 - swid
 
 </code></pre>
@@ -343,12 +343,12 @@ attributes:
     domain_of:
     - BuildUtilityType
     range: string
-  cpeid:
-    name: cpeid
+  _cpeid:
+    name: _cpeid
     description: '"Specifies the Common Platform Enumeration identifier for the software."'
     from_schema: https://w3id.org/linkmodel/uco-tool
     rank: 1000
-    alias: cpeid
+    alias: _cpeid
     owner: BuildUtilityType
     domain_of:
     - BuildUtilityType

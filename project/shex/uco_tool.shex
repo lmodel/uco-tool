@@ -1,0 +1,636 @@
+BASE <https://w3id.org/lmodel/uco-tool/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX core: <https://w3id.org/lmodel/uco-core/>
+PREFIX configuration: <https://w3id.org/lmodel/uco-configuration/>
+PREFIX identity: <https://w3id.org/lmodel/uco-identity/>
+PREFIX location: <https://w3id.org/lmodel/uco-location/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:dateTime
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:DateOrDatetime linkml:DateOrDatetime
+
+linkml:Uriorcurie IRI
+
+linkml:Curie xsd:string
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+core:StringType xsd:string
+
+core:LiteralType rdf:literal
+
+core:NonNegativeIntegerType xsd:nonNegativeInteger
+
+core:StatementType xsd:string
+
+core:IriType IRI
+
+core:BooleanType xsd:boolean
+
+core:HexBinaryType xsd:hexBinary
+
+location:DecimalType xsd:decimal
+
+identity:AddressFacet CLOSED {
+    (  $identity:AddressFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ? ;
+          identity:address @location:Location ?
+       ) ;
+       rdf:type [ identity:AddressFacet ] ?
+    )
+}
+
+identity:AffiliationFacet CLOSED {
+    (  $identity:AffiliationFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:AffiliationFacet ] ?
+    )
+}
+
+<AnalyticTool> CLOSED {
+    (  $<AnalyticTool_tes> (  &<Tool_tes> ;
+          rdf:type [ <Tool> ] ?
+       ) ;
+       rdf:type [ <AnalyticTool> ] ?
+    )
+}
+
+core:Annotation CLOSED {
+    (  $core:Annotation_tes (  &core:Assertion_tes ;
+          rdf:type [ core:Assertion ] ? ;
+          core:object @core:UcoObject +
+       ) ;
+       rdf:type [ core:Annotation ] ?
+    )
+}
+
+core:Assertion  (
+    CLOSED {
+       (  $core:Assertion_tes (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ? ;
+             core:statement @linkml:String *
+          ) ;
+          rdf:type [ core:Assertion ] ?
+       )
+    } OR @core:Annotation
+)
+
+core:AttributedName CLOSED {
+    (  $core:AttributedName_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ? ;
+          core:namingAuthority @linkml:String ?
+       ) ;
+       rdf:type [ core:AttributedName ] ?
+    )
+}
+
+identity:BirthInformationFacet CLOSED {
+    (  $identity:BirthInformationFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ? ;
+          identity:birthdate @linkml:Datetime ?
+       ) ;
+       rdf:type [ identity:BirthInformationFacet ] ?
+    )
+}
+
+<BuildFacet> CLOSED {
+    (  $<BuildFacet_tes> (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          <buildInformation> @<BuildInformationType> ?
+       ) ;
+       rdf:type [ <BuildFacet> ] ?
+    )
+}
+
+<BuildInformationType> CLOSED {
+    (  $<BuildInformationType_tes> (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          <buildConfiguration> @configuration:Configuration ? ;
+          <buildUtility> @<BuildUtilityType> ? ;
+          <compilers> @<CompilerType> * ;
+          <libraries> @<LibraryType> * ;
+          <compilationDate> @linkml:Datetime ? ;
+          <buildID> @linkml:String ? ;
+          <buildLabel> @linkml:String ? ;
+          <buildOutputLog> @linkml:String ? ;
+          <buildProject> @linkml:String ? ;
+          <buildScript> @linkml:String ? ;
+          <buildVersion> @linkml:String ?
+       ) ;
+       rdf:type [ <BuildInformationType> ] ?
+    )
+}
+
+<BuildUtilityType> CLOSED {
+    (  $<BuildUtilityType_tes> (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          <buildUtilityName> @linkml:String ? ;
+          <_cpeid> @linkml:String ? ;
+          <_swid> @linkml:String ?
+       ) ;
+       rdf:type [ <BuildUtilityType> ] ?
+    )
+}
+
+core:Bundle CLOSED {
+    (  $core:Bundle_tes (  &core:EnclosingCompilation_tes ;
+          rdf:type [ core:EnclosingCompilation ] ?
+       ) ;
+       rdf:type [ core:Bundle ] ?
+    )
+}
+
+core:Compilation  (
+    CLOSED {
+       (  $core:Compilation_tes (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ?
+          ) ;
+          rdf:type [ core:Compilation ] ?
+       )
+    } OR @core:ContextualCompilation OR @core:EnclosingCompilation
+)
+
+<CompilerType> CLOSED {
+    (  $<CompilerType_tes> (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          <compilerInformalDescription> @linkml:String ? ;
+          <_cpeid> @linkml:String ? ;
+          <_swid> @linkml:String ?
+       ) ;
+       rdf:type [ <CompilerType> ] ?
+    )
+}
+
+core:ConfidenceFacet CLOSED {
+    (  $core:ConfidenceFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          core:confidence @core:NonNegativeIntegerType
+       ) ;
+       rdf:type [ core:ConfidenceFacet ] ?
+    )
+}
+
+configuration:Configuration CLOSED {
+    (  $configuration:Configuration_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ? ;
+          configuration:configurationEntry @configuration:ConfigurationEntry * ;
+          configuration:dependencies @configuration:Dependency * ;
+          configuration:usageContextAssumptions @linkml:String *
+       ) ;
+       rdf:type [ configuration:Configuration ] ?
+    )
+}
+
+configuration:ConfigurationEntry CLOSED {
+    (  $configuration:ConfigurationEntry_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          configuration:itemObject @core:UcoObject * ;
+          configuration:itemDescription @linkml:String ? ;
+          configuration:itemName @linkml:String ? ;
+          configuration:itemType @linkml:String ? ;
+          configuration:itemValue @linkml:String *
+       ) ;
+       rdf:type [ configuration:ConfigurationEntry ] ?
+    )
+}
+
+<ConfiguredTool> CLOSED {
+    (  $<ConfiguredTool_tes> (  &<Tool_tes> ;
+          rdf:type [ <Tool> ] ? ;
+          configuration:usesConfiguration @configuration:Configuration ? ;
+          configuration:isConfigurationOf @core:UcoObject ?
+       ) ;
+       rdf:type [ <ConfiguredTool> ] ?
+    )
+}
+
+core:ContextualCompilation  (
+    CLOSED {
+       (  $core:ContextualCompilation_tes (  &core:Compilation_tes ;
+             rdf:type [ core:Compilation ] ? ;
+             core:object @core:UcoObject +
+          ) ;
+          rdf:type [ core:ContextualCompilation ] ?
+       )
+    } OR @core:Grouping
+)
+
+core:ControlledVocabulary CLOSED {
+    (  $core:ControlledVocabulary_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ? ;
+          core:constrainingVocabularyReference @core:IriType ? ;
+          core:constrainingVocabularyName @linkml:String ? ;
+          core:value @linkml:String
+       ) ;
+       rdf:type [ core:ControlledVocabulary ] ?
+    )
+}
+
+identity:CountryOfResidenceFacet CLOSED {
+    (  $identity:CountryOfResidenceFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:CountryOfResidenceFacet ] ?
+    )
+}
+
+<DefensiveTool> CLOSED {
+    (  $<DefensiveTool_tes> (  &<Tool_tes> ;
+          rdf:type [ <Tool> ] ?
+       ) ;
+       rdf:type [ <DefensiveTool> ] ?
+    )
+}
+
+configuration:Dependency CLOSED {
+    (  $configuration:Dependency_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          configuration:dependencyDescription @linkml:String ? ;
+          configuration:dependencyType @linkml:String ?
+       ) ;
+       rdf:type [ configuration:Dependency ] ?
+    )
+}
+
+core:EnclosingCompilation  (
+    CLOSED {
+       (  $core:EnclosingCompilation_tes (  &core:Compilation_tes ;
+             rdf:type [ core:Compilation ] ? ;
+             core:object @core:UcoObject *
+          ) ;
+          rdf:type [ core:EnclosingCompilation ] ?
+       )
+    } OR @core:Bundle
+)
+
+identity:EventsFacet CLOSED {
+    (  $identity:EventsFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:EventsFacet ] ?
+    )
+}
+
+core:ExternalReference CLOSED {
+    (  $core:ExternalReference_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          core:referenceURL @core:IriType ? ;
+          core:definingContext @linkml:String ? ;
+          core:externalIdentifier @linkml:String ?
+       ) ;
+       rdf:type [ core:ExternalReference ] ?
+    )
+}
+
+core:Facet  (
+    @<BuildFacet> OR @core:ConfidenceFacet OR @location:GPSCoordinatesFacet OR @identity:IdentityFacet OR
+    @location:LatLongCoordinatesFacet OR @location:SimpleAddressFacet
+)
+
+core:Facet_struct {
+    (  $core:Facet_tes (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ?
+       ) ;
+       rdf:type [ core:Facet ] ?
+    )
+}
+
+location:GPSCoordinatesFacet CLOSED {
+    (  $location:GPSCoordinatesFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          location:hdop @location:DecimalType ? ;
+          location:pdop @location:DecimalType ? ;
+          location:tdop @location:DecimalType ? ;
+          location:vdop @location:DecimalType ?
+       ) ;
+       rdf:type [ location:GPSCoordinatesFacet ] ?
+    )
+}
+
+core:Grouping CLOSED {
+    (  $core:Grouping_tes (  &core:ContextualCompilation_tes ;
+          rdf:type [ core:ContextualCompilation ] ? ;
+          core:context @linkml:String *
+       ) ;
+       rdf:type [ core:Grouping ] ?
+    )
+}
+
+identity:IdentifierFacet CLOSED {
+    (  $identity:IdentifierFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:IdentifierFacet ] ?
+    )
+}
+
+identity:Identity  (
+    CLOSED {
+       (  $identity:Identity_tes (  &core:IdentityAbstraction_tes ;
+             rdf:type [ core:IdentityAbstraction ] ?
+          ) ;
+          rdf:type [ identity:Identity ] ?
+       )
+    } OR @identity:Organization OR @identity:Person
+)
+
+core:IdentityAbstraction  (
+    CLOSED {
+       (  $core:IdentityAbstraction_tes (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ?
+          ) ;
+          rdf:type [ core:IdentityAbstraction ] ?
+       )
+    } OR @identity:Identity
+)
+
+identity:IdentityFacet  (
+    CLOSED {
+       (  $identity:IdentityFacet_tes (  &core:Facet_tes ;
+             rdf:type [ core:Facet ] ?
+          ) ;
+          rdf:type [ identity:IdentityFacet ] ?
+       )
+    } OR @identity:AddressFacet OR @identity:AffiliationFacet OR @identity:BirthInformationFacet OR
+    @identity:CountryOfResidenceFacet OR @identity:EventsFacet OR @identity:IdentifierFacet OR @identity:LanguagesFacet OR
+    @identity:NationalityFacet OR @identity:OccupationFacet OR @identity:OrganizationDetailsFacet OR @identity:PersonalDetailsFacet
+    OR @identity:PhysicalInfoFacet OR @identity:QualificationFacet OR @identity:RelatedIdentityFacet OR @identity:SimpleNameFacet
+    OR @identity:VisaFacet
+)
+
+core:Item CLOSED {
+    (  $core:Item_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ?
+       ) ;
+       rdf:type [ core:Item ] ?
+    )
+}
+
+identity:LanguagesFacet CLOSED {
+    (  $identity:LanguagesFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:LanguagesFacet ] ?
+    )
+}
+
+location:LatLongCoordinatesFacet CLOSED {
+    (  $location:LatLongCoordinatesFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          location:altitude @location:DecimalType ? ;
+          location:latitude @location:DecimalType ? ;
+          location:longitude @location:DecimalType ?
+       ) ;
+       rdf:type [ location:LatLongCoordinatesFacet ] ?
+    )
+}
+
+<LibraryType> CLOSED {
+    (  $<LibraryType_tes> (  &core:UcoInherentCharacterizationThing_tes ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ? ;
+          <libraryName> @linkml:String ? ;
+          <libraryVersion> @linkml:String ?
+       ) ;
+       rdf:type [ <LibraryType> ] ?
+    )
+}
+
+location:Location CLOSED {
+    (  $location:Location_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ?
+       ) ;
+       rdf:type [ location:Location ] ?
+    )
+}
+
+<MaliciousTool> CLOSED {
+    (  $<MaliciousTool_tes> (  &<Tool_tes> ;
+          rdf:type [ <Tool> ] ?
+       ) ;
+       rdf:type [ <MaliciousTool> ] ?
+    )
+}
+
+core:MarkingDefinitionAbstraction CLOSED {
+    (  $core:MarkingDefinitionAbstraction_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ?
+       ) ;
+       rdf:type [ core:MarkingDefinitionAbstraction ] ?
+    )
+}
+
+core:ModusOperandi CLOSED {
+    (  $core:ModusOperandi_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ?
+       ) ;
+       rdf:type [ core:ModusOperandi ] ?
+    )
+}
+
+identity:NationalityFacet CLOSED {
+    (  $identity:NationalityFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:NationalityFacet ] ?
+    )
+}
+
+identity:OccupationFacet CLOSED {
+    (  $identity:OccupationFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:OccupationFacet ] ?
+    )
+}
+
+identity:Organization CLOSED {
+    (  $identity:Organization_tes (  &identity:Identity_tes ;
+          rdf:type [ identity:Identity ] ?
+       ) ;
+       rdf:type [ identity:Organization ] ?
+    )
+}
+
+identity:OrganizationDetailsFacet CLOSED {
+    (  $identity:OrganizationDetailsFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:OrganizationDetailsFacet ] ?
+    )
+}
+
+identity:Person CLOSED {
+    (  $identity:Person_tes (  &identity:Identity_tes ;
+          rdf:type [ identity:Identity ] ?
+       ) ;
+       rdf:type [ identity:Person ] ?
+    )
+}
+
+identity:PersonalDetailsFacet CLOSED {
+    (  $identity:PersonalDetailsFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:PersonalDetailsFacet ] ?
+    )
+}
+
+identity:PhysicalInfoFacet CLOSED {
+    (  $identity:PhysicalInfoFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:PhysicalInfoFacet ] ?
+    )
+}
+
+identity:QualificationFacet CLOSED {
+    (  $identity:QualificationFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:QualificationFacet ] ?
+    )
+}
+
+identity:RelatedIdentityFacet CLOSED {
+    (  $identity:RelatedIdentityFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:RelatedIdentityFacet ] ?
+    )
+}
+
+core:Relationship CLOSED {
+    (  $core:Relationship_tes (  &core:UcoObject_tes ;
+          rdf:type [ core:UcoObject ] ? ;
+          core:endTime @linkml:Datetime * ;
+          core:isDirectional @core:BooleanType ;
+          core:kindOfRelationship @linkml:String ? ;
+          core:source @core:UcoObject + ;
+          core:startTime @linkml:Datetime * ;
+          core:target @core:UcoObject
+       ) ;
+       rdf:type [ core:Relationship ] ?
+    )
+}
+
+location:SimpleAddressFacet CLOSED {
+    (  $location:SimpleAddressFacet_tes (  &core:Facet_tes ;
+          rdf:type [ core:Facet ] ? ;
+          location:addressType @linkml:String ? ;
+          location:country @linkml:String ? ;
+          location:locality @linkml:String ? ;
+          location:postalCode @linkml:String ? ;
+          location:region @linkml:String ? ;
+          location:street @linkml:String ?
+       ) ;
+       rdf:type [ location:SimpleAddressFacet ] ?
+    )
+}
+
+identity:SimpleNameFacet CLOSED {
+    (  $identity:SimpleNameFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ? ;
+          identity:familyName @linkml:String * ;
+          identity:givenName @linkml:String * ;
+          identity:honorificPrefix @linkml:String * ;
+          identity:honorificSuffix @linkml:String *
+       ) ;
+       rdf:type [ identity:SimpleNameFacet ] ?
+    )
+}
+
+<Tool>  (
+    CLOSED {
+       (  $<Tool_tes> (  &core:UcoObject_tes ;
+             rdf:type [ core:UcoObject ] ? ;
+             <_creator> @identity:Identity ? ;
+             <_references> @core:IriType * ;
+             <servicePack> @linkml:String ? ;
+             <toolType> @linkml:String ? ;
+             <_version> @linkml:String ?
+          ) ;
+          rdf:type [ <Tool> ] ?
+       )
+    } OR @<AnalyticTool> OR @<ConfiguredTool> OR @<DefensiveTool> OR @<MaliciousTool>
+)
+
+core:UcoInherentCharacterizationThing  (
+    CLOSED {
+       (  $core:UcoInherentCharacterizationThing_tes (  &core:UcoThing_tes ;
+             rdf:type [ core:UcoThing ] ?
+          ) ;
+          rdf:type [ core:UcoInherentCharacterizationThing ] ?
+       )
+    } OR @<BuildInformationType> OR @<BuildUtilityType> OR @<CompilerType> OR @configuration:ConfigurationEntry OR
+    @configuration:Dependency OR @core:ExternalReference OR @core:Facet OR @<LibraryType>
+)
+
+core:UcoObject  (
+    CLOSED {
+       (  $core:UcoObject_tes (  &core:UcoThing_tes ;
+             rdf:type [ core:UcoThing ] ? ;
+             core:createdBy @linkml:String ? ;
+             dcterms:description @linkml:String * ;
+             core:externalReference @linkml:String * ;
+             core:hasFacet @linkml:String * ;
+             core:modifiedTime @linkml:Datetime * ;
+             rdfs:label @linkml:String ? ;
+             core:objectMarking @core:MarkingDefinitionAbstraction * ;
+             core:objectCreatedTime @linkml:Datetime ? ;
+             core:specVersion @linkml:String ? ;
+             core:tag @linkml:String *
+          ) ;
+          rdf:type [ core:UcoObject ] ?
+       )
+    } OR @core:Assertion OR @core:AttributedName OR @core:Compilation OR @configuration:Configuration OR @core:ControlledVocabulary
+    OR @core:IdentityAbstraction OR @core:Item OR @location:Location OR @core:MarkingDefinitionAbstraction OR @core:ModusOperandi
+    OR @core:Relationship OR @<Tool>
+)
+
+core:UcoThing  (
+    @core:UcoInherentCharacterizationThing OR @core:UcoObject
+)
+
+core:UcoThing_struct {
+    (  $core:UcoThing_tes rdf:type . * ;
+       rdf:type [ core:UcoThing ] ?
+    )
+}
+
+identity:VisaFacet CLOSED {
+    (  $identity:VisaFacet_tes (  &identity:IdentityFacet_tes ;
+          rdf:type [ identity:IdentityFacet ] ?
+       ) ;
+       rdf:type [ identity:VisaFacet ] ?
+    )
+}
+
+

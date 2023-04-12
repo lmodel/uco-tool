@@ -1,0 +1,576 @@
+type AddressFacet
+  {
+    address: Location
+  }
+
+type AffiliationFacet
+  {
+  }
+
+type AnalyticTool
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    creator: Identity
+    references: [IriType]
+    servicePack: String
+    toolType: String
+    version: String
+  }
+
+type Annotation
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    statement: [String]
+    object: [UcoObject]!
+  }
+
+type Assertion
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    statement: [String]
+  }
+
+type AttributedName
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    namingAuthority: String
+  }
+
+type BirthInformationFacet
+  {
+    birthdate: Datetime
+  }
+
+type BuildFacet
+  {
+    buildInformation: BuildInformationType
+  }
+
+type BuildInformationType
+  {
+    buildConfiguration: Configuration
+    buildUtility: BuildUtilityType
+    compilers: [CompilerType]
+    libraries: [LibraryType]
+    compilationDate: Datetime
+    buildID: String
+    buildLabel: String
+    buildOutputLog: String
+    buildProject: String
+    buildScript: String
+    buildVersion: String
+  }
+
+type BuildUtilityType
+  {
+    buildUtilityName: String
+    cpeid: String
+    swid: String
+  }
+
+type Bundle
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    object: [UcoObject]
+  }
+
+type Compilation
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+  }
+
+type CompilerType
+  {
+    compilerInformalDescription: String
+    cpeid: String
+    swid: String
+  }
+
+type ConfidenceFacet
+  {
+    confidence: NonNegativeIntegerType!
+  }
+
+type Configuration
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    configurationEntry: [ConfigurationEntry]
+    dependencies: [Dependency]
+    usageContextAssumptions: [String]
+  }
+
+type ConfigurationEntry
+  {
+    itemObject: [UcoObject]
+    itemDescription: String
+    itemName: String
+    itemType: String
+    itemValue: [String]
+  }
+
+type ConfiguredTool
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    creator: Identity
+    references: [IriType]
+    servicePack: String
+    toolType: String
+    version: String
+    usesConfiguration: Configuration
+    isConfigurationOf: UcoObject
+  }
+
+type ContextualCompilation
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    object: [UcoObject]!
+  }
+
+type ControlledVocabulary
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    constrainingVocabularyReference: IriType
+    constrainingVocabularyName: String
+    value: String!
+  }
+
+type CountryOfResidenceFacet
+  {
+  }
+
+type DefensiveTool
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    creator: Identity
+    references: [IriType]
+    servicePack: String
+    toolType: String
+    version: String
+  }
+
+type Dependency
+  {
+    dependencyDescription: String
+    dependencyType: String
+  }
+
+type EnclosingCompilation
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    object: [UcoObject]
+  }
+
+type EventsFacet
+  {
+  }
+
+type ExternalReference
+  {
+    referenceURL: IriType
+    definingContext: String
+    externalIdentifier: String
+  }
+
+interface Facet
+  {
+  }
+
+type GPSCoordinatesFacet
+  {
+    hdop: DecimalType
+    pdop: DecimalType
+    tdop: DecimalType
+    vdop: DecimalType
+  }
+
+type Grouping
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    object: [UcoObject]!
+    context: [String]
+  }
+
+type IdentifierFacet
+  {
+  }
+
+type Identity
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+  }
+
+type IdentityAbstraction
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+  }
+
+type IdentityFacet
+  {
+  }
+
+type Item
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+  }
+
+type LanguagesFacet
+  {
+  }
+
+type LatLongCoordinatesFacet
+  {
+    altitude: DecimalType
+    latitude: DecimalType
+    longitude: DecimalType
+  }
+
+type LibraryType
+  {
+    libraryName: String
+    libraryVersion: String
+  }
+
+type Location
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+  }
+
+type MaliciousTool
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    creator: Identity
+    references: [IriType]
+    servicePack: String
+    toolType: String
+    version: String
+  }
+
+type MarkingDefinitionAbstraction
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+  }
+
+type ModusOperandi
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+  }
+
+type NationalityFacet
+  {
+  }
+
+type OccupationFacet
+  {
+  }
+
+type Organization
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+  }
+
+type OrganizationDetailsFacet
+  {
+  }
+
+type Person
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+  }
+
+type PersonalDetailsFacet
+  {
+  }
+
+type PhysicalInfoFacet
+  {
+  }
+
+type QualificationFacet
+  {
+  }
+
+type RelatedIdentityFacet
+  {
+  }
+
+type Relationship
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    endTime: [Datetime]
+    isDirectional: BooleanType!
+    kindOfRelationship: String
+    source: [UcoObject]!
+    startTime: [Datetime]
+    target: UcoObject!
+  }
+
+type SimpleAddressFacet
+  {
+    addressType: String
+    country: String
+    locality: String
+    postalCode: String
+    region: String
+    street: String
+  }
+
+type SimpleNameFacet
+  {
+    familyName: [String]
+    givenName: [String]
+    honorificPrefix: [String]
+    honorificSuffix: [String]
+  }
+
+type Tool
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+    creator: Identity
+    references: [IriType]
+    servicePack: String
+    toolType: String
+    version: String
+  }
+
+type UcoInherentCharacterizationThing
+  {
+  }
+
+type UcoObject
+  {
+    createdBy: String
+    description: [String]
+    externalReference: [String]
+    hasFacet: [String]
+    modifiedTime: [Datetime]
+    name: String
+    objectMarking: [MarkingDefinitionAbstraction]
+    objectCreatedTime: Datetime
+    specVersion: String
+    tag: [String]
+  }
+
+interface UcoThing
+  {
+  }
+
+type VisaFacet
+  {
+  }
+

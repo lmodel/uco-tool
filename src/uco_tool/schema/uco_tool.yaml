@@ -1,0 +1,270 @@
+---
+id: https://w3id.org/linkmodel/uco-tool
+name: uco-tool
+title: Uco Tool
+description: >-
+  This ontology defines classes and properties for characterizing tools.
+license: https://www.apache.org/licenses/LICENSE-2.0
+
+version: 1.1.0  # sync with primary git repo release tag
+
+## ------------
+##
+## PREFIXES
+## ------------
+# CURIE namespaces (prefixes/base URI's) mappings of prefixes used in the body of
+# the UCOLink Model specification are resolved using a specific precedence order,
+# for use in the generation of the UCOLink Model context.jsonld mappings to
+# namespaces. Any prefixes encountered in the UCOLink Model but not resolved by
+# the following precedence sources, are anonymously declared by linkml as
+# http://example.org/UNKNOWN/ rooted base URI's which should ideally be repaired
+# in one of the precedence lists.
+#
+# 1. The following 'prefixes:' delimited list has first precedence in resolution.
+
+prefixes:
+  linkml: 'https://w3id.org/linkml/'
+  om: 'http://www.ontology-of-units-of-measure.org/resource/om-2/'
+
+  tool: 'https://w3id.org/lmodel/uco-tool/'
+  schema_uco_core: 'https://w3id.org/lmodel/uco-core/schema/'
+  schema_uco_configuration: 'https://w3id.org/lmodel/uco-configuration/schema/'
+  schema_uco_identity: 'https://w3id.org/lmodel/uco-identity/schema/'
+  schema_uco_location: 'https://w3id.org/lmodel/uco-location/schema/'
+
+default_prefix: tool
+default_range: string
+
+## ------------
+## SUBSETS
+## ------------
+subsets: {}
+
+
+## ------------
+## TYPES
+## ------------
+imports:
+  - linkml:types
+  - schema_uco_core:uco_core
+  - schema_uco_configuration:uco_configuration
+  - schema_uco_identity:uco_identity
+
+# types: {}
+
+## ------------
+## ENUMS
+## ------------
+enums: {}
+
+## ------------
+## SLOTS
+## ------------
+slots:
+
+  buildConfiguration:
+    description: >-
+      "How the build utility was configured for a particular build of a particular software."
+    range: Configuration
+
+  buildID:
+    description: >-
+      "An externally defined unique identifier for a particular build of a software."
+
+  buildInformation:
+    description: >-
+      "Describes how a particular tool was built."
+    range: BuildInformationType
+
+  buildLabel:
+    description: >-
+      "Relevant label for a particular build of a particular software."
+
+  buildOutputLog:
+    description: >-
+      "The output log of the build process for a software."
+
+  buildProject:
+    description: >-
+       "The project name of a build of a software."
+
+  buildScript:
+    description: >-
+      "The actual build script for a particular build of a particular software."
+
+  buildUtility:
+    description: >-
+      "Identifies the utility used to build a software."
+    range: BuildUtilityType
+
+  buildUtilityName:
+    description: >-
+      "The informally defined name of the utility used to build a particular software."
+
+  buildVersion:
+    description: >-
+      "The appropriate version descriptor of a particular build of a particular software."
+
+  compilationDate:
+    description: >-
+      "The compilation date for the build of a software."
+    range: datetime
+
+  compilerInformalDescription:
+    description: >-
+      "An informal description of a compiler."
+
+  compilers:
+    description: >-
+      "The compilers utilized during a particular build of a particular software."
+    range: CompilerType
+
+  _cpeid:
+    description: >-
+      "Specifies the Common Platform Enumeration identifier for the software."
+
+  _creator:
+    description: >-
+      "The creator organization for a particular tool."
+    range: Identity
+
+  libraries:
+    description: >-
+      "The libraries incorporated into a particular build of a software."
+    range: LibraryType
+
+  libraryName:
+    description: >-
+      "The name of the library."
+
+  libraryVersion:
+    description: >-
+      "The version of the library."
+
+  _references:
+    description: >-
+      "References to information describing a particular tool."
+    range: iri type
+    exact_mappings:
+      - wikidata:Q96622155
+
+  servicePack:
+    description: >-
+      "An appropriate service pack descriptor for a particular tool."
+    exact_mappings:
+      - wikidata:Q208218
+
+  _swid:
+    description: >-
+      "Specifies the SWID tag for the software."
+
+  toolType:
+    description: >-
+      "The type of tool."
+
+  _version:
+    description: >-
+      "An appropriate version descriptor of a particular tool."
+    exact_mappings:
+      - wikidata:Q20826013
+
+## ------------
+## CLASSES
+## ------------
+classes:
+
+  AnalyticTool:
+    is_a: Tool
+    description: >-
+      "An analytic tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of explanation, interpretation or logical reasoning."
+
+  BuildFacet:
+    is_a: Facet
+    description: >-
+      "A build facet is a grouping of characteristics unique to a particular version of a software."
+    slots:
+      - buildInformation
+
+  BuildInformationType:
+    is_a: UcoInherentCharacterizationThing
+    description: >-
+      "A build information type is a grouping of characteristics that describe how a particular version of software was converted from source code to executable code."
+    slots:
+      - buildConfiguration
+      - buildUtility
+      - compilers
+      - libraries
+      - compilationDate
+      - buildID
+      - buildLabel
+      - buildOutputLog
+      - buildProject
+      - buildScript
+      - buildVersion
+    slot_usage:
+      compilers:
+        multivalued: true
+      libraries:
+        multivalued: true
+
+  BuildUtilityType:
+    is_a: UcoInherentCharacterizationThing
+    description: >-
+      "A build utility type characterizes the tool used to convert from source code to executable code for a particular version of software."
+    slots:
+      - buildUtilityName
+      - _cpeid
+      - _swid
+
+  CompilerType:
+    is_a: UcoInherentCharacterizationThing
+    description: >-
+      "A compiler type is a grouping of characteristics unique to a specific program that translates computer code written in one programming language (the source language) into another language (the target language). Typically a program that translates source code from a high-level programming language to a lower-level language (e.g., assembly language, object code, or machine code) to create an executable program. [based on https://en.wikipedia.org/wiki/Compiler]"
+    slots:
+      - compilerInformalDescription
+      - _cpeid
+      - _swid
+
+  ConfiguredTool:
+    is_a: Tool
+    description: >-
+      "A ConfiguredTool is a Tool that is known to be configured to run in a more specified manner than some unconfigured or less-configured Tool."
+    slots:
+      - usesConfiguration
+      - isConfigurationOf
+
+  DefensiveTool:
+    is_a: Tool
+    description: >-
+      "A defensive tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of guarding."
+
+  LibraryType:
+    is_a: UcoInherentCharacterizationThing
+    description: >-
+      "A library type is a grouping of characteristics unique to a collection of resources incorporated into the build of a software."
+    slots:
+      - libraryName
+      - libraryVersion
+
+  MaliciousTool:
+    is_a: Tool
+    description: >-
+      "A malicious tool is an artifact of hardware and/or software utilized to accomplish a malevolent task or purpose."
+
+  Tool:
+    is_a: UcoObject
+    description: >-
+      "A tool is an element of hardware and/or software utilized to carry out a particular function."
+    slots:
+      - _creator
+      - _references
+      - servicePack
+      - toolType
+      - _version
+    slot_usage:
+      _references:
+        multivalued: true
+    narrow_mappings:
+      - wikidata:Q1077784  # programming tool
+
+...

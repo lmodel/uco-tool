@@ -1,8 +1,8 @@
 # Auto generated from uco_tool.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-04-12T12:38:18
+# Generation date: 2023-06-25T00:17:07
 # Schema: uco-tool
 #
-# id: https://w3id.org/linkmodel/uco-tool
+# id: https://w3id.org/lmodel/uco-tool
 # description: This ontology defines classes and properties for characterizing tools.
 # license: https://www.apache.org/licenses/LICENSE-2.0
 

@@ -2,7 +2,7 @@
   "name": "uco-tool",
   "description": "This ontology defines classes and properties for characterizing tools.",
   "title": "Uco Tool",
-  "id": "https://w3id.org/linkmodel/uco-tool",
+  "id": "https://w3id.org/lmodel/uco-tool",
   "version": "1.1.0",
   "imports": [
     "linkml:types",
@@ -137,7 +137,7 @@
         "schema:Time"
       ],
       "base": "XSDTime",
-      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#time",
       "repr": "str",
       "@type": "TypeDefinition"
     },
@@ -244,7 +244,7 @@
       "definition_uri": "https://w3id.org/linkml/Objectidentifier",
       "description": "A URI or CURIE that represents an object in the model.",
       "comments": [
-        "Used for inheritence and type checking"
+        "Used for inheritance and type checking"
       ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
@@ -261,6 +261,42 @@
       "imported_from": "linkml:types",
       "base": "NodeIdentifier",
       "uri": "http://www.w3.org/ns/shex#nonLiteral",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "jsonpointer",
+      "definition_uri": "https://w3id.org/linkml/Jsonpointer",
+      "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
+      "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "jsonpath",
+      "definition_uri": "https://w3id.org/linkml/Jsonpath",
+      "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
+      "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "sparqlpath",
+      "definition_uri": "https://w3id.org/linkml/Sparqlpath",
+      "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+      "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
       "@type": "TypeDefinition"
     },
@@ -356,7 +392,7 @@
       "name": "buildConfiguration",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildConfiguration",
       "description": "\"How the build utility was configured for a particular build of a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildConfiguration",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -370,7 +406,7 @@
       "name": "buildID",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildID",
       "description": "\"An externally defined unique identifier for a particular build of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildID",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -383,7 +419,7 @@
       "name": "buildInformation",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildInformation",
       "description": "\"Describes how a particular tool was built.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildInformation",
       "owner": "BuildFacet",
       "domain_of": [
@@ -397,7 +433,7 @@
       "name": "buildLabel",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildLabel",
       "description": "\"Relevant label for a particular build of a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildLabel",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -410,7 +446,7 @@
       "name": "buildOutputLog",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildOutputLog",
       "description": "\"The output log of the build process for a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildOutputLog",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -423,7 +459,7 @@
       "name": "buildProject",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildProject",
       "description": "\"The project name of a build of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildProject",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -436,7 +472,7 @@
       "name": "buildScript",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildScript",
       "description": "\"The actual build script for a particular build of a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildScript",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -449,7 +485,7 @@
       "name": "buildUtility",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildUtility",
       "description": "\"Identifies the utility used to build a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildUtility",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -463,7 +499,7 @@
       "name": "buildUtilityName",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildUtilityName",
       "description": "\"The informally defined name of the utility used to build a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildUtilityName",
       "owner": "BuildUtilityType",
       "domain_of": [
@@ -476,7 +512,7 @@
       "name": "buildVersion",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/buildVersion",
       "description": "\"The appropriate version descriptor of a particular build of a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/buildVersion",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -489,7 +525,7 @@
       "name": "compilationDate",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/compilationDate",
       "description": "\"The compilation date for the build of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/compilationDate",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -502,7 +538,7 @@
       "name": "compilerInformalDescription",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/compilerInformalDescription",
       "description": "\"An informal description of a compiler.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/compilerInformalDescription",
       "owner": "CompilerType",
       "domain_of": [
@@ -515,7 +551,7 @@
       "name": "compilers",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/compilers",
       "description": "\"The compilers utilized during a particular build of a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/compilers",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -529,7 +565,7 @@
       "name": "_cpeid",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/_cpeid",
       "description": "\"Specifies the Common Platform Enumeration identifier for the software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/_cpeid",
       "owner": "CompilerType",
       "domain_of": [
@@ -543,7 +579,7 @@
       "name": "_creator",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/_creator",
       "description": "\"The creator organization for a particular tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/_creator",
       "owner": "Tool",
       "domain_of": [
@@ -557,7 +593,7 @@
       "name": "libraries",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/libraries",
       "description": "\"The libraries incorporated into a particular build of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/libraries",
       "owner": "BuildInformationType",
       "domain_of": [
@@ -571,7 +607,7 @@
       "name": "libraryName",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/libraryName",
       "description": "\"The name of the library.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/libraryName",
       "owner": "LibraryType",
       "domain_of": [
@@ -584,7 +620,7 @@
       "name": "libraryVersion",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/libraryVersion",
       "description": "\"The version of the library.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/libraryVersion",
       "owner": "LibraryType",
       "domain_of": [
@@ -597,7 +633,7 @@
       "name": "_references",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/_references",
       "description": "\"References to information describing a particular tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "exact_mappings": [
         "http://identifiers.org/wikidata/Q96622155"
       ],
@@ -613,7 +649,7 @@
       "name": "servicePack",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/servicePack",
       "description": "\"An appropriate service pack descriptor for a particular tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "exact_mappings": [
         "http://identifiers.org/wikidata/Q208218"
       ],
@@ -629,7 +665,7 @@
       "name": "_swid",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/_swid",
       "description": "\"Specifies the SWID tag for the software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/_swid",
       "owner": "CompilerType",
       "domain_of": [
@@ -643,7 +679,7 @@
       "name": "toolType",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/toolType",
       "description": "\"The type of tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/toolType",
       "owner": "Tool",
       "domain_of": [
@@ -656,7 +692,7 @@
       "name": "_version",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/_version",
       "description": "\"An appropriate version descriptor of a particular tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "exact_mappings": [
         "http://identifiers.org/wikidata/Q20826013"
       ],
@@ -1662,7 +1698,7 @@
       "name": "BuildInformationType_compilers",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/compilers",
       "description": "\"The compilers utilized during a particular build of a particular software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "compilers",
       "domain": "BuildInformationType",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/compilers",
@@ -1682,7 +1718,7 @@
       "name": "BuildInformationType_libraries",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/libraries",
       "description": "\"The libraries incorporated into a particular build of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "libraries",
       "domain": "BuildInformationType",
       "slot_uri": "https://w3id.org/lmodel/uco-tool/libraries",
@@ -1702,7 +1738,7 @@
       "name": "Tool__references",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/_references",
       "description": "\"References to information describing a particular tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "exact_mappings": [
         "http://identifiers.org/wikidata/Q96622155"
       ],
@@ -3061,7 +3097,7 @@
       "name": "AnalyticTool",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/AnalyticTool",
       "description": "\"An analytic tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of explanation, interpretation or logical reasoning.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "Tool",
       "slots": [
         "UcoObject_createdBy",
@@ -3088,7 +3124,7 @@
       "name": "BuildFacet",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/BuildFacet",
       "description": "\"A build facet is a grouping of characteristics unique to a particular version of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "Facet",
       "slots": [
         "buildInformation"
@@ -3101,7 +3137,7 @@
       "name": "BuildInformationType",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/BuildInformationType",
       "description": "\"A build information type is a grouping of characteristics that describe how a particular version of software was converted from source code to executable code.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "UcoInherentCharacterizationThing",
       "slots": [
         "buildConfiguration",
@@ -3124,7 +3160,7 @@
       "name": "BuildUtilityType",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/BuildUtilityType",
       "description": "\"A build utility type characterizes the tool used to convert from source code to executable code for a particular version of software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "UcoInherentCharacterizationThing",
       "slots": [
         "buildUtilityName",
@@ -3139,7 +3175,7 @@
       "name": "CompilerType",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/CompilerType",
       "description": "\"A compiler type is a grouping of characteristics unique to a specific program that translates computer code written in one programming language (the source language) into another language (the target language). Typically a program that translates source code from a high-level programming language to a lower-level language (e.g., assembly language, object code, or machine code) to create an executable program. [based on https://en.wikipedia.org/wiki/Compiler]\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "UcoInherentCharacterizationThing",
       "slots": [
         "compilerInformalDescription",
@@ -3154,7 +3190,7 @@
       "name": "ConfiguredTool",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/ConfiguredTool",
       "description": "\"A ConfiguredTool is a Tool that is known to be configured to run in a more specified manner than some unconfigured or less-configured Tool.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "Tool",
       "slots": [
         "UcoObject_createdBy",
@@ -3183,7 +3219,7 @@
       "name": "DefensiveTool",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/DefensiveTool",
       "description": "\"A defensive tool is an artifact of hardware and/or software utilized to accomplish a task or purpose of guarding.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "Tool",
       "slots": [
         "UcoObject_createdBy",
@@ -3210,7 +3246,7 @@
       "name": "LibraryType",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/LibraryType",
       "description": "\"A library type is a grouping of characteristics unique to a collection of resources incorporated into the build of a software.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "UcoInherentCharacterizationThing",
       "slots": [
         "libraryName",
@@ -3224,7 +3260,7 @@
       "name": "MaliciousTool",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/MaliciousTool",
       "description": "\"A malicious tool is an artifact of hardware and/or software utilized to accomplish a malevolent task or purpose.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "is_a": "Tool",
       "slots": [
         "UcoObject_createdBy",
@@ -3251,7 +3287,7 @@
       "name": "Tool",
       "definition_uri": "https://w3id.org/lmodel/uco-tool/Tool",
       "description": "\"A tool is an element of hardware and/or software utilized to carry out a particular function.\"",
-      "from_schema": "https://w3id.org/linkmodel/uco-tool",
+      "from_schema": "https://w3id.org/lmodel/uco-tool",
       "narrow_mappings": [
         "wikidata:Q1077784"
       ],
@@ -4246,9 +4282,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "uco_tool.yaml",
-  "source_file_date": "2023-04-12T12:37:09",
-  "source_file_size": 7639,
-  "generation_date": "2023-04-12T12:37:26",
+  "source_file_date": "2023-06-25T00:11:23",
+  "source_file_size": 7636,
+  "generation_date": "2023-06-25T00:16:20",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/uco_tool.context.jsonld",
